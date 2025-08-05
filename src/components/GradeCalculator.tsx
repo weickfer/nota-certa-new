@@ -8,7 +8,7 @@ const GradeCalculator = () => {
 
   return (
     <div className="min-h-screen bg-background math-bg relative">
-      <div className="max-w-md mx-auto px-4 py-8 relative z-10">
+      <div className="max-w-md mx-auto px-4 pt-2 relative z-10">
         <div className="max-w-md mx-auto">
           {/* Header */}
           <div className="text-center mb-2">
@@ -32,11 +32,13 @@ const GradeCalculator = () => {
           {activeTab === 'annual' && (
             <Annual />
           )}
+        </div>
 
-          {/* Tabs */}
-          <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 w-[90%] max-w-md flex flex-col items-center gap-2">
-            <p className="text-xs text-muted-foreground">
-              💡 Ferramenta criada para autoavaliação acadêmica
+        {/* Tabs */}
+        <div className="mb-2 max-w-md flex flex-col items-center gap-2">
+            <p className="text-xs text-center text-muted-foreground">
+              💡 Ferramenta criada para autoavaliação.
+              <br/> Feito por Weickmam Machado.
             </p>
             <div className="bg-white rounded-full shadow-md px-4 py-2 flex justify-between w-[90%] max-w-md">
               <button
@@ -58,14 +60,6 @@ const GradeCalculator = () => {
               </button>
             </div>
           </div>
-
-          {/* Footer */}
-          {/* <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 text-center">
-            <p className="text-xs text-muted-foreground">
-              💡 Ferramenta criada para autoavaliação acadêmica
-            </p>
-          </div> */}
-        </div>
       </div>
     </div>
   );

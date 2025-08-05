@@ -53,7 +53,7 @@ export function Annual() {
   };
 
   return (
-    <Card className="card-math fade-in">
+    <Card className="mb-4 card-math fade-in">
       <div className="space-y-4">
         <div>
           <h3 className="text-lg font-semibold mb-4 text-foreground">Cálculo Anual</h3>

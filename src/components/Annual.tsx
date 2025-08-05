@@ -42,6 +42,13 @@ export function Annual() {
     }
     
     setAnnualResult(result);
+
+    setTimeout(() => {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth',
+      });
+    }, 100)
   };
 
   const handleAnnualChange = (field: keyof AnnualGrades, value: string) => {

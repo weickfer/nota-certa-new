@@ -42,6 +42,12 @@ export function Bimester() {
     }
     
     setBimesterResult(result);
+    setTimeout(() => {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth',
+      });
+    }, 100)
   };
 
   const handleBimesterChange = (field: keyof BimesterGrades, value: string) => {

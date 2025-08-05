@@ -9,7 +9,7 @@ const GradeCalculator = () => {
   return (
     <div className="min-h-screen bg-background math-bg relative">
       <div className="max-w-md mx-auto px-4 pt-2 relative z-10">
-        <div className="max-w-md mx-auto">
+        <div className="max-w-md mx-auto pb-12">
           {/* Header */}
           <div className="text-center mb-2">
             <div className="inline-flex items-center gap-3 mb-4">
@@ -23,24 +23,7 @@ const GradeCalculator = () => {
             </div>
           </div>
 
-          {/* Bimester Tab */}
-          {activeTab === 'bimester' && (
-            <Bimester />
-          )}
-
-          {/* Annual Tab */}
-          {activeTab === 'annual' && (
-            <Annual />
-          )}
-        </div>
-
-        {/* Tabs */}
-        <div className="mb-2 max-w-md flex flex-col items-center gap-2">
-            <p className="text-xs text-center text-muted-foreground">
-              💡 Ferramenta criada para autoavaliação.
-              <br/> Feito por Weickmam Machado.
-            </p>
-            <div className="bg-white rounded-full shadow-md px-4 py-2 flex justify-between w-[90%] max-w-md">
+          <div className="hidden md:flex bg-white rounded-sm border mb-2 px-4 py-2 justify-between w-full max-w-md">
               <button
                 onClick={() => setActiveTab('bimester')}
                 className={`flex flex-col items-center justify-center flex-1 text-xs ${activeTab === 'bimester' ? 'text-blue-600' : 'text-gray-400'
@@ -58,8 +41,46 @@ const GradeCalculator = () => {
                 <GraduationCap className="w-5 h-5 mb-1" />
                 Anual
               </button>
-            </div>
           </div>
+
+          {/* Bimester Tab */}
+          {activeTab === 'bimester' && (
+            <Bimester />
+          )}
+
+          {/* Annual Tab */}
+          {activeTab === 'annual' && (
+            <Annual />
+          )}
+            <p className="text-xs text-center text-muted-foreground">
+              💡 Ferramenta criada para autoavaliação.
+              <br/> Feito por Weickmam Machado.
+            </p>
+        </div>
+        {/* <div className="mb-2 max-w-md flex flex-col items-center gap-2">
+          </div> */}
+
+        <div className="block md:hidden fixed bottom-0 right-0 left-0 w-full bg-white border-t pt-2 border">
+              <div className="flex items-center mx-auto gap-8 max-w-md">
+              <button
+                onClick={() => setActiveTab('bimester')}
+                className={`flex flex-col items-center justify-center flex-1 text-xs ${activeTab === 'bimester' ? 'text-blue-600' : 'text-gray-400'
+                  }`}
+              >
+                <BookOpen className="w-5 h-5 mb-1" />
+                Bimestral
+              </button>
+
+              <button
+                onClick={() => setActiveTab('annual')}
+                className={`flex flex-col items-center justify-center flex-1 text-xs ${activeTab === 'annual' ? 'text-blue-600' : 'text-gray-400'
+                  }`}
+              >
+                <GraduationCap className="w-5 h-5 mb-1" />
+                Anual
+              </button>
+              </div>
+        </div>
       </div>
     </div>
   );

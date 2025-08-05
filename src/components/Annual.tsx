@@ -30,13 +30,15 @@ export function Annual() {
     if (total >= 20) {
       result = {
         type: 'success',
-        message: 'Parabéns! Você passou!',
+        message: 'Parabéns! Você passou de ano!',
         total
       };
     } else {
       result = {
-        type: 'fail',
-        message: 'Você não atingiu nota suficiente para passar nesse bimestre.',
+        type: 'attendance',
+        semestre1: bimestre1 + bimestre2 >= 10 ? '✅ Passou do 1º semestre' : '❌ Não passou do 1º semestre',
+        semestre2: bimestre3 + bimestre4 >= 10 ? '✅ Passou do 2º semestre' : '❌ Não passou do 2º semestre',
+        message: `Situação: `,
         total
       };
     }
@@ -149,6 +151,8 @@ export function Annual() {
               {getResultIcon(annualResult.type)}
               <div>
                 <p className="font-semibold">{annualResult.message}</p>
+                <p className="font-semibold">{annualResult.semestre1}</p>
+                <p className="font-semibold">{annualResult.semestre2}</p>
                 <p className="text-sm opacity-90">
                   Sua nota: {annualResult.total}/40 pontos
                 </p>

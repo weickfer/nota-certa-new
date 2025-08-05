@@ -7,6 +7,8 @@ export interface Result {
   message: string;
   average?: number;
   total?: number;
+  semestre1?: string;
+  semestre2?: string;
 }
 
 export const getResultIcon = (type: ResultType) => {
